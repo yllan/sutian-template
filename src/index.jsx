@@ -1,11 +1,37 @@
 /** @jsxImportSource ./sutian */
 import { render } from './sutian/jsx-runtime'
+import { writeFileSync } from 'fs'
 
 const items = <>
-  <d:entry id="1" d:title="a">
-    <title>Fuck! {"Hello >_< "}</title>
-  </d:entry>
-  <d:entry id="2" d:title="b">
+  <d:entry id="2283" d:title="好">
+    <d:index d:value="好" d:yomi="hònn" />
+    <d:index d:value="hònn" d:yomi="hònn" />
+    <d:index d:value="hòⁿ" d:yomi="hònn" />
+    <h1>好
+      <span class="reading">文</span>
+      <span class="syntax">
+        <span d:pr="TL">/ hònn /</span>
+        <span d:pr="POJ">/ hòⁿ /</span>
+      </span>
+    </h1>
+    <div class="body">
+      <div class="def_element">喜愛。
+        <ul class="example">
+          <li>
+            <div class="example_hanzi single_line"><strong>好</strong>奇</div>
+            <div d:pr="TL" class="example_tailo single_line">hònn-kî</div>
+            <div d:pr="POJ" class="example_tailo single_line">hòⁿ-kî</div>
+            <div class="example_hanyu single_line"></div>
+          </li>
+          <li>
+            <div class="example_hanzi single_line"><strong>好</strong>玄</div>
+            <div d:pr="TL" class="example_tailo single_line">hònn-hiân</div>
+            <div d:pr="POJ" class="example_tailo single_line">hòⁿ-hiân</div>
+            <div class="example_hanyu single_line">(好奇)</div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </d:entry>
 </>
 
@@ -31,4 +57,4 @@ const dictionary = <d:dictionary xmlns="http://www.w3.org/1999/xhtml" xmlns:d="h
   </d:entry>
 </d:dictionary>
 
-console.log(render(dictionary, { prettyPrint: true }))
+writeFileSync('sutian.xml', render(dictionary, { prettyPrint: true }))
