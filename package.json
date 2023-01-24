@@ -1,0 +1,26 @@
+{
+  "name": "sutian-template",
+  "version": "1.0.0",
+  "description": "Generate XML for Apple's Dictionary Format",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "dev": "npm run build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "xml",
+    "dictionary"
+  ],
+  "author": "yllan",
+  "license": "ISC",
+  "dependencies": {
+    "xmlbuilder2": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-transform-react-jsx": "^7.20.13",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
