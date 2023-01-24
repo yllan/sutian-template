@@ -5,8 +5,7 @@
       "@babel/plugin-transform-react-jsx",
       {
         "throwIfNamespace": false,
-        // "pragma": "_x",
-        // "pragmaFrag": "_xf"
+        "runtime": "automatic"
       },
     ]
   ]

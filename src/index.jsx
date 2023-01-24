@@ -1,28 +1,5 @@
-/** @jsx _x */
-/** @jsxFrag _xf */
-
-import { create } from 'xmlbuilder2'
-
-/* ----- begin: generate xml from jsx ----- */
-const _xf = 'Fragment'
-const _x = (tag, attrs, ...children) => ({ tag, attrs, children })
-const render = (o, options) => {
-  const set = (parent, o) => {
-    if (typeof o === 'string') {
-      parent.txt(o)
-      return parent
-    } else {
-      const node = o.tag === _xf ? parent : parent.ele(o.tag)
-      o.attrs && Object.entries(o.attrs).forEach(kv => node.att(...kv))
-      o.children && o.children.forEach(c => set(node, c))
-      return node
-    }
-  }
-  const doc = set(create(), o)
-  return doc.end(options)
-}
-/* ----- end: generate xml from jsx ----- */
-
+/** @jsxImportSource ./sutian */
+import { render } from './sutian/jsx-runtime'
 
 const items = <>
   <d:entry id="1" d:title="a">
